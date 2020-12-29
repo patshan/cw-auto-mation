@@ -9,7 +9,7 @@ import time
 
 #to open client caseware program
 CW_path = r"C:\Program Files (x86)\CaseWare\cwin64.exe"
-file_path = r"C:\Users\pshaw\Desktop\CW auto\Automation testing\Automation testing.ac"
+file_path = r"C:\Users\user1\Desktop\CW auto\Automation testing\Automation testing.ac"
 
 sub.Popen([CW_path, file_path])
 time.sleep(10)
@@ -38,7 +38,7 @@ file_slct = gui.locateCenterOnScreen('file select button.png', confidence=.8)
 
 gui.click(file_slct)
 
-File_Path = r"C:\Users\pshaw\Desktop\CW auto\Automation testing"
+File_Path = r"C:\Users\user1\Desktop\CW auto\Automation testing"
 
 def find(paths):
     result = ()
