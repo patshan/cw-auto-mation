@@ -1,0 +1,49 @@
+
+
+# to import needed libraries
+
+import pyautogui as gui
+import os
+import subprocess as sub
+import time
+
+#to open client caseware program
+CW_path = r"C:\Program Files (x86)\CaseWare\cwin64.exe"
+file_path = r"C:\Users\pshaw\Desktop\CW auto\Automation testing\Automation testing.ac"
+
+sub.Popen([CW_path, file_path])
+time.sleep(10)
+
+# to automate import
+eng_btn = gui.locateC PBCrOnScreen('engbtn.png', confidence=0.8)
+
+gui.click(eng_btn)
+time.sleep(1)
+
+imp_btn = gui.locateCenterOnScreen('impbtn.png', confidence=0.8)
+
+gui.click(imp_btn)
+
+excl_imp_btn = gui.locateCenterOnScreen('exclbtn.png', confidence=.8)
+
+gui.click(excl_imp_btn)
+
+time.sleep(3)
+
+browse_btn = gui.locateCenterOnScreen('browsebtn.png', confidence=.8)
+
+gui.click(browse_btn)
+
+file_slct = gui.locateCenterOnScreen('file select button.png', confidence=.8)
+
+gui.click(file_slct)
+
+File_Path = r"C:\Users\pshaw\Desktop\CW auto\Automation testing"
+
+def find(paths):
+    result = ()
+    for root, dirs, files in os.walk(File_Path):
+        if paths in files:
+            result.append(os.path.join(root, paths))
+        return result
+print(File_Path("2019 PBC Trial Balance.xlsx"))
